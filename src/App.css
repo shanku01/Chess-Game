@@ -36,3 +36,224 @@
     transform: rotate(360deg);
   }
 }
+
+
+:root{
+--gray: #444;
+--light-gray: #CCC8C8;
+--medium-gray: #666;
+--black: #333;
+--white: #fff;
+--green: #0F8E51;
+--blue: #01ADE4;
+
+}
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Lato, sans-serif;
+  font-size: 17px;
+  color:var(--black);
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  position: relative;
+}
+
+h1 {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--blue);
+  color: var(--white);
+  font-weight: 300;
+  margin-top: 0;
+  padding: 10px 0;
+  text-align: center;
+  max-height: 60px;
+  z-index: 2;
+}
+
+.main {
+  display: flex;
+  padding: 0 1em;
+  margin-top: 100px;
+}
+
+.sidebar {
+  flex: 1 1 20%;
+  padding: 0 3%;
+}
+
+.board {
+  flex: 1 1 80%;
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  border-right: 3px solid var(--black);
+  border-left: 3px solid var(--black);
+}
+  .square:nth-child(even) {
+    background: var(--gray);
+  }
+
+  .square:nth-child(odd) {
+    background: var(--gray);
+  }
+
+  .first-child {
+    border-top: 3px solid var(--black);
+  }
+
+
+  .square-meta {
+    display: flex;
+    justify-content: space-between;
+  }
+  .chess-id {
+    font-size: 75%;
+    background-color: var(--green);
+    color: var(--white);
+    padding: .2em;
+  }
+.square {
+  flex: 1 1 0;
+  display: flex;
+  flex-flow: column nowrap;
+  border: 1px solid var(--black);
+  min-height: 100px;
+  position: relative;
+
+}
+.square::before {
+      content: "x";
+      color: var(--gray);
+      font-size: 75%;
+      height: 10px;
+      width: 10px;
+      cursor: pointer;
+    }
+
+  .delete-label {
+    padding-right: 5px;
+  
+  }
+  .piece {
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    cursor: pointer;
+  }
+
+.delete-form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  background: var(--blue);
+}
+
+.command-form {
+  h3 {
+    margin-top: 0;
+  }
+
+  input,
+  button {
+    display: block;
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: 300;
+    outline: 0;
+    padding: .4em;
+  }
+
+  input {
+    margin-bottom: 10px;
+  }
+
+  button {
+    background: var(--green);
+    border: 0;
+    color: var(--white);
+    cursor: pointer;
+
+    &:hover {
+      background: darken(var(--green), 8%);
+    }
+  }
+
+  p {
+    font-size: 85%;
+  }
+}
+
+.piece-lists {
+  margin-top: 40px;
+}
+
+th {
+  width: 100%;
+  text-align: left;
+  padding: .5em;
+  background:var(--gray);
+  color: var(--white);
+  font-weight: 300;
+}
+
+.piece-list {
+  width: 100%;
+  border: 1px solid var(--black);
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+
+.notices {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
+  }
+  .notice {
+    display: block;
+    background: var(--blue);
+    color: var(--white);
+    text-align: center;
+    font-size: 2em;
+    padding: 2em;
+  }
+    span {
+      font-size: 85%;
+      font-weight: 300;
+}
+isHidden {
+  display: none;
+}
